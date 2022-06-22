@@ -1,0 +1,82 @@
+html{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    
+}
+body.container{
+    background-image: url(/static/assets/backgound_black_main.jpg);
+}
+main.mainpage{
+    margin: auto;
+    border: 7px groove #dd1010;
+    text-align: center;
+    max-width: 700px;
+    color: #4CFF08;
+    font-size: 1.2rem;
+}
+
+header.top{
+    background-color: black;
+   
+}
+header div input.h{
+   margin-left: 65px;
+   margin-right: 50px;
+}
+div.flex{
+    display: inline-flex;
+    padding-left: 30px;
+
+}
+header img{
+    display: block;
+    margin: auto;
+    max-width: 200px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+table{
+    
+    margin:auto;
+    background-color: #c2c2c2;
+}
+th,td{
+    padding: 8px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+h1,h2{
+    border-bottom: 7px groove#dd1010
+}
+a{
+    text-decoration: none;
+    color: #dd1010;
+}
+a:hover{
+   color: #4CFF08;
+}
+input{
+    
+    max-width: 200px;
+    box-shadow: 3px 3px 12px 0px #FF0B0B;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: inherit;
+    font-size: inherit;
+}
+input:focus{
+ background-color: #4CFF08;
+ 
+}
+button{
+    border-radius: inherit;
+    color: inherit;
+}
+button:hover{
+    color: #dd1010;
+    background-color: #4CFF08;
+    font-size: inherit;
+}

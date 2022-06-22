@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastre-se</title>
+</head>
+<body>
+    <form th:object="${user}" th:action="@{/cadastrar}" method="post">
+       Nome de usuário: <input th:field="*{username}" type="text" required>
+       Senha: <input th:field="*{password}" type="password" min="5" required>
+        <button type="submit" value="enviar"  >cadastrar</button>
+        <button type="reset" value="reset">limpar</button>
+    </form>
+</body>
+</html>
