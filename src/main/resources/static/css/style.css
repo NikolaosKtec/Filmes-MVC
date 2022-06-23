@@ -4,7 +4,10 @@ html{
     
 }
 body.container{
-    background-image: url(/static/assets/backgound_black_main.jpg);
+    background-image: url(/assets/backgound_black_main.jpg);
+}
+body.default{
+    background: linear-gradient(156deg, #3E3E3E 47%, #fff 100%);
 }
 main.mainpage{
     margin: auto;
@@ -41,15 +44,17 @@ form{
 table{
     
     margin:auto;
-    background-color: #c2c2c2;
+    background-color: rgba(185, 185, 185, 0.5);
 }
 th,td{
     padding: 8px;
 }
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {background-color: #4CFF08;}
 
 h1,h2{
-    border-bottom: 7px groove#dd1010
+    border-bottom: 7px groove#dd1010;
+    margin-left: 20vw;
+    color: antiquewhite;
 }
 a{
     text-decoration: none;

@@ -1,8 +1,13 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" th:fragment="mainmovie(filmes)">
+<link href="/css/style.css" rel="stylesheet" type="text/css" th:fragment="link_css">
 
-    <h2>Filmes</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
+
+
+
+<main th:fragment="mainmovie(filmes)">
+
+        <h2>Filmes</h2>
+
+        <table >
             <thead>
             <tr>
                 <th scope="col">#id</th>
@@ -14,17 +19,18 @@
                 <th scope="col">Deletar</th>
             </tr>
             </thead>
+
             <tbody>
             <tr th:each="f : ${filmes}" th:object="${f}">
-                <td th:text="*{id}"></td>
-                <td th:text="*{titulo}"></td>
-                <td th:text="*{diretor}"></td>
-                <td th:text="*{sinopse}"></td>
-                <td th:text="*{avaliacao}"></td>
+                <td th:text="*{id}">id</td>
+                <td th:text="*{titulo}">titulooooo</td>
+                <td th:text="*{diretor}">diretor</td>
+                <td th:text="*{sinopse}">sinopseeeeeee</td>
+                <td th:text="*{avaliacao}">avaliacao</td>
                 <td> <a th:href="@{'/editar/'+ *{id}}">Editar</a> </td>
                 <td> <a th:href="@{'/deletar/'+ *{id}}">Deletar</a></td>
             </tr>
+
             </tbody>
         </table>
-    </div>
 </main>

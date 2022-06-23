@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!--TODO esta tela de login não aceita CSS?-->
-    <link href="/style/style.css" rel="stylesheet" type="text/css">
+    <link th:replace="/commons/main :: link_css">
     <title>página de login</title>
 </head>
 
@@ -25,5 +25,8 @@
         <button type="submit" value="Sign in">login</button>
     </form>
 </main>
+<footer>
+    <a href="/cadastro_usuario">ainda não tem cadastro?</a>
+</footer>
 </body>
 </html>

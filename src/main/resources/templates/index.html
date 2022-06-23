@@ -9,65 +9,23 @@
     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link--> 
-    <link href="/style/style.css" rel="stylesheet" type="text/css">
-          <title>Página de Administração</title>
+    <link th:replace="/commons/main :: link_css">
+    <title>Página de Administração</title>
 </head>
-<body>
+<body class="default">
+        <header th:replace="commons/topbar :: header">
+        </header>
 
-    <header class="top">
-            <img src="/assets/logo-cinemark-branco-lg.png">
-            <div class="flex">
-                <a  href="#">Banco de Filmes</a>
-                <input class="h" type="text" placeholder="Pesquisar">
-                        <a href="/logout">Sair</a>
-            </div>
-        
-    </header>
-        <!--header th:replace="commons/topbar :: header">
-        </!--header-->
-
-
-    <div class="container-fluid">
-        <div class="row">
+    <div>
+        <div>
             <nav th:replace="/commons/sidebar :: navbar">
             </nav>
 
-            <main th:fragment="mainmovie(filmes)">
-
-                <h2>Filmes</h2>
-            
-                    <table >
-                        <thead>
-                        <tr>
-                            <th scope="col">#id</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Diretor</th>
-                            <th scope="col">Sinopse</th>
-                            <th scope="col">Nota</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Deletar</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="f : ${filmes}" th:object="${f}">
-                            <td th:text="*{id}">id</td>
-                            <td th:text="*{titulo}">titulooooo</td>
-                            <td th:text="*{diretor}">diretor</td>
-                            <td th:text="*{sinopse}">sinopseeeeeee</td>
-                            <td th:text="*{avaliacao}">avaliacao</td>
-                            <td> <a th:href="@{'/editar/'+ *{id}}">Editar</a> </td>
-                            <td> <a th:href="@{'/deletar/'+ *{id}}">Deletar</a></td>
-                        </tr>
-                    
-                        </tbody>
-                    </table>
-                
+            <!--todo abaixo ok-->
+            <main th:replace="/commons/main :: mainmovie(${filmes})">
             </main>
-            <!--main th:replace="/commons/main :: mainmovie(${filmes})">
-            </!--main-->
         </div>
     </div>
-
 
 </body>
 </html>

@@ -28,13 +28,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.
                 authorizeRequests()
-                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/error").permitAll()
+                .antMatchers("/resources/**", "/static/**","/assets/**","/css/**", "/js/**", "/images/**", "/error").permitAll()
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                //.permitAll()
+                //.isCustomLoginPage()
                 .defaultSuccessUrl("/", true)
                 .and()
                 .logout()
