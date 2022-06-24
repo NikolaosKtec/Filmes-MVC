@@ -2,20 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <!--TODO esta tela de login não aceita CSS?-->
+
     <link th:replace="/commons/main :: link_css">
     <title>página de login</title>
 </head>
 
 <body class="container">
 
-    <div th:if="${param.error}">
-        Senha ou username incorretos!
-    </div>
 
-    <div th:if="${param.logout}">
-        Você foi desconectado!
-    </div>
   <main class="mainpage">
     <h1>Please sign in</h1>
     <form th:action="@{/login}" method="post">
@@ -23,6 +17,14 @@
       <label>password: </label> <input type="password" name="password">
 
         <button type="submit" value="Sign in">login</button>
+
+        <p class="error" th:if="${param.error}">
+            Senha ou username incorretos!
+        </p>
+
+        <p class="error" th:if="${param.logout}">
+            Você foi desconectado!
+        </p>
     </form>
 </main>
 <footer>

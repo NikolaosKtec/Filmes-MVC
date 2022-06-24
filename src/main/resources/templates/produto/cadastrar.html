@@ -18,12 +18,19 @@
 
 
 <div class="container-fluid">
-  <div class="row">
+
     <nav th:replace="/commons/sidebar :: navbar">
     </nav>
+    <!--div th:errors="BindException"-->
+
+    <div th:if="${param.errors}">
+
+    </div>
+
+    </div>
     <main th:replace="/produto/produtoform :: form(${filme},'Cadastro de Filmes')">
     </main>
-  </div>
+
 </div>
 
 

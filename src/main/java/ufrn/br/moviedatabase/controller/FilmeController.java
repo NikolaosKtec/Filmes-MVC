@@ -2,6 +2,8 @@ package ufrn.br.moviedatabase.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import ufrn.br.moviedatabase.domain.Filme;
 import ufrn.br.moviedatabase.service.FilmeService;
@@ -55,8 +57,13 @@ public class FilmeController {
     }
 
     @PostMapping("salvar")
-    public String doSalvaFilme(@ModelAttribute @Valid Filme f){
-       service.update(f);
+    public String doSalvaFilme(@ModelAttribute @Valid Filme f, Errors errors){
+
+        if(errors.hasErrors()){
+            return "produto/editar";
+        }
+
+        service.update(f);
         return "redirect:/";
     }
 }

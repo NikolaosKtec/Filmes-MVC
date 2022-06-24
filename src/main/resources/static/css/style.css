@@ -49,6 +49,10 @@ table{
 th,td{
     padding: 8px;
 }
+li.error, p.error{
+    color: #dd1010;
+    font-size: 0.8rem;
+}
 tr:nth-child(even) {background-color: #4CFF08;}
 
 h1,h2{

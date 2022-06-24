@@ -1,38 +1,53 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" th:fragment="form(filme, titulo)">
+<main th:fragment="form(filme, titulo)">
 
     <h2 th:text="${titulo}"></h2>
-    <div class="table-responsive">
+    <div >
         <form th:object="${filme}" method="post" th:action="@{/salvar}">
             <input type="hidden" th:field="*{id}">
         <table class="table table-sm">
             <tbody>
             <tr>
-                <td style="text-align: end;">Título:</td>
-                <td><input type="text" class="form-control" th:field="*{titulo}"></td>
+                <td >Título:</td>
+                <td><input type="text"  th:field="*{titulo}"></td>
+                <td th:if="${#fields.hasErrors('titulo')}" >
+                    <li class="error" th:each="err :${#fields.errors('titulo')}" th:text="${err}"></li>
+                </td>
             </tr>
             <tr>
-                <td style="text-align: end;">Diretor:</td>
-                <td><input type="text" class="form-control" th:field="*{diretor}"></td>
+                <td >Diretor:</td>
+                <td><input type="text"  th:field="*{diretor}"></td>
+                <td th:if="${#fields.hasErrors('diretor')}" >
+                    <li class="error" th:each="err :${#fields.errors('diretor')}" th:text="${err}"></li>
+                </td>
             </tr>
             <tr>
-                <td style="text-align: end;">Lançamento:</td>
-                <td><input type="text" class="form-control" th:field="*{lancamento}"></td>
+                <td>Lançamento:</td>
+                <td><input type="text"  th:field="*{lancamento}"></td>
+                <td th:if="${#fields.hasErrors('lancamento')}" >
+                    <li class="error" th:each="err :${#fields.errors('lancamento')}" th:text="${err}"></li>
+                </td>
             </tr>
             <tr>
-                <td style="text-align: end;">Imagem:</td>
-                <td><input type="text" class="form-control" th:field="*{imagemUrl}"></td>
+                <td >Imagem:</td>
+                <td><input type="text"  th:field="*{imagemUrl}"></td>
             </tr>
             <tr>
-                <td style="text-align: end;">Sinopse:</td>
+                <td >Sinopse:</td>
                 <td><input type="text" class="form-control" th:field="*{sinopse}"></td>
+                <td th:if="${#fields.hasErrors('sinopse')}" >
+                    <li class="error" th:each="err :${#fields.errors('sinopse')}" th:text="${err}"></li>
+                </td>
             </tr>
             <tr>
-                <td style="text-align: end;">Avaliação:</td>
+                <td >Avaliação:</td>
                 <td><input type="number" max="5" min="0" class="form-control" th:field="*{avaliacao}"></td>
+                <td th:if="${#fields.hasErrors('avaliacao')}" >
+                    <li class="error" th:each="err :${#fields.errors('avaliacao')}" th:text="${err}"></li>
+                </td>
             </tr>
             <tr>
-                <td style="text-align: end;"><button type="submit" class="btn btn-primary">Enviar</button></td>
-                <td><button type="submit" class="btn btn-danger">Limpar</button></td>
+                <td ><button type="submit">Enviar</button></td>
+                <td><button type="reset">Limpar</button></td>
             </tr>
             </tbody>
         </table>
