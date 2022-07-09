@@ -1,8 +1,8 @@
+# este projeto contém estilos personalizados (css)
 # Filmes-MVC
 
-[projeto original. link](https://github.com/taniro/MovieDatabase/)
 
 - alguns erros que encontrei: 
-     - *error no Security > novo usuário não cadastra
-- este projeto contém estilos personalizados (css)
+- *error no Security > novo usuário não cadastra
 - processo de constantes atualizações!
+[projeto original. link](https://github.com/taniro/MovieDatabase/)
